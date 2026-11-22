@@ -105,7 +105,7 @@ export default function Home() {
     <main className="min-h-screen overflow-x-clip bg-[#f4f6f7] text-[#172033]">
 
       {/* Liquid Glass Navbar */}
-      <header className="fixed top-3 left-1/2 z-50 w-[calc(100%-24px)] max-w-[1380px] -translate-x-1/2">
+      <header className="fixed top-3 inset-x-0 z-50 mx-auto w-[calc(100%-24px)] max-w-[1380px]">
 
         <div className="relative isolate rounded-[28px] border border-white/60 bg-white/45 shadow-[0_8px_40px_rgba(30,64,175,0.10),inset_0_1px_0_rgba(255,255,255,0.9)] backdrop-blur-2xl backdrop-saturate-150 transition-all duration-500">
 
