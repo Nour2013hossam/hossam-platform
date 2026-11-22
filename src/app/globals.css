@@ -1,26 +1,230 @@
-@import "tailwindcss";
+﻿@import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --primary: #204bf0;
+  --primary-hover: #173bd0;
+  --mint: #97d1cc;
+  --gold: #fcb937;
+  --light-blue: #cfe2ec;
+  --background: #f4f6f7;
+  --surface: #ffffff;
+  --foreground: #172033;
+  --muted: #718096;
+  --border: #e5eaf0;
+  --radius: 16px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.dark {
+  --background: #0b1120;
+  --surface: #131c2e;
+  --foreground: #f4f7fb;
+  --muted: #a0aec0;
+  --border: #273449;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
+  margin: 0;
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, sans-serif;
+  direction: rtl;
+  -webkit-font-smoothing: antialiased;
 }
+
+button, input, textarea, select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+::selection {
+  background: var(--primary);
+  color: white;
+}
+
+.container {
+  width: min(100% - 32px, 1440px);
+  margin-inline: auto;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.gradient-primary {
+  background: linear-gradient(135deg, #204bf0, #5277ff);
+}
+
+.gradient-gold {
+  background: linear-gradient(135deg, #fcb937, #ffe08a);
+}
+
+.transition-smooth {
+  transition: all 0.25s ease;
+}
+
+@media (max-width: 640px) {
+  .container {
+    width: min(100% - 24px, 100%);
+  }
+}
+
+/* ===== THANOYA ALEXANDRIA DESIGN UPGRADE ===== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #f5f7ff;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: #204bf0;
+  color: white;
+}
+
+/* Glass Navbar */
+main > header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255,255,255,.88);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 4px 25px rgba(23,48,100,.04);
+  transition: all .3s ease;
+}
+
+/* Hero Background */
+#home {
+  isolation: isolate;
+  background:
+    radial-gradient(ellipse at 85% 15%, rgba(32,75,240,.11), transparent 38%),
+    radial-gradient(ellipse at 10% 85%, rgba(37,190,180,.10), transparent 35%),
+    linear-gradient(135deg,#f8faff,#eef3ff);
+}
+
+#home h2 {
+  letter-spacing: -1.5px;
+}
+
+#home h2 span {
+  background: linear-gradient(90deg,#204bf0,#5485ff,#16a6b2);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Floating Animation */
+@keyframes floatSoft {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+#home .container > div:first-child {
+  animation: fadeUp .8s ease both;
+}
+
+#home .container > div:last-child {
+  animation: fadeUp 1s ease both;
+}
+
+#home .container > div:last-child > div:first-child {
+  animation: floatSoft 5s ease-in-out infinite;
+}
+
+/* Course Cards */
+#courses article {
+  border-radius: 28px;
+  box-shadow: 0 8px 30px rgba(30,55,110,.04);
+  transition: transform .4s ease, box-shadow .4s ease, border-color .4s ease;
+}
+
+#courses article:hover {
+  transform: translateY(-9px);
+  border-color: rgba(32,75,240,.2);
+  box-shadow: 0 25px 55px rgba(32,75,240,.13);
+}
+
+/* Feature Cards */
+#features .group {
+  transition: all .35s ease;
+}
+
+#features .group:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px rgba(32,75,240,.10);
+}
+
+/* Teacher Section */
+#teacher {
+  background:
+    radial-gradient(circle at 90% 50%,rgba(32,75,240,.05),transparent 35%),
+    #fff;
+}
+
+/* Buttons */
+a, button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  transition: color .25s ease, background .25s ease;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid rgba(32,75,240,.4);
+  outline-offset: 4px;
+}
+
+/* CTA */
+main > section:last-of-type > div {
+  box-shadow: 0 25px 60px rgba(32,75,240,.18);
+}
+
+/* Responsive */
+@media(max-width:640px) {
+  #home h2 {
+    letter-spacing: -1px;
+  }
+
+  #home {
+    overflow: hidden;
+  }
+
+  #courses article:hover,
+  #features .group:hover {
+    transform: translateY(-3px);
+  }
+}
+
+/* Accessibility */
+@media(prefers-reduced-motion:reduce) {
+  *,*::before,*::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+}
+

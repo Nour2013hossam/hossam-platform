@@ -1,0 +1,82 @@
+﻿@import "tailwindcss";
+
+:root {
+  --primary: #204bf0;
+  --primary-hover: #173bd0;
+  --mint: #97d1cc;
+  --gold: #fcb937;
+  --light-blue: #cfe2ec;
+  --background: #f4f6f7;
+  --surface: #ffffff;
+  --foreground: #172033;
+  --muted: #718096;
+  --border: #e5eaf0;
+  --radius: 16px;
+}
+
+.dark {
+  --background: #0b1120;
+  --surface: #131c2e;
+  --foreground: #f4f7fb;
+  --muted: #a0aec0;
+  --border: #273449;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, sans-serif;
+  direction: rtl;
+  -webkit-font-smoothing: antialiased;
+}
+
+button, input, textarea, select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+::selection {
+  background: var(--primary);
+  color: white;
+}
+
+.container {
+  width: min(100% - 32px, 1440px);
+  margin-inline: auto;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.gradient-primary {
+  background: linear-gradient(135deg, #204bf0, #5277ff);
+}
+
+.gradient-gold {
+  background: linear-gradient(135deg, #fcb937, #ffe08a);
+}
+
+.transition-smooth {
+  transition: all 0.25s ease;
+}
+
+@media (max-width: 640px) {
+  .container {
+    width: min(100% - 24px, 100%);
+  }
+}
