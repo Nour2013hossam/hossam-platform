@@ -3,6 +3,7 @@ import {
   ArrowLeft,
   Bell,
   BookOpen,
+  BookMarked,
   CalendarDays,
   CheckCircle2,
   Clock3,
@@ -83,6 +84,9 @@ export default function StudentDashboard() {
             </Link>
             <Link href="/courses" className="flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-bold text-slate-500 transition hover:bg-slate-50 hover:text-[#204bf0]">
               <BookOpen size={19} /> كورساتي
+            </Link>
+            <Link href="/books" className="flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-bold text-slate-500 transition hover:bg-slate-50 hover:text-[#204bf0]">
+              <BookMarked size={19} /> الكتب والمذكرات
             </Link>
             <Link href="/student" className="flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-bold text-slate-500 transition hover:bg-slate-50 hover:text-[#204bf0]">
               <Target size={19} /> الاختبارات والواجبات
