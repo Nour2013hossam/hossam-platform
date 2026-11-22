@@ -84,8 +84,6 @@ export default function Home() {
     contact: pathname === "/contact",
     student:
       pathname === "/student" || pathname.startsWith("/student/"),
-    parent:
-      pathname === "/parent" || pathname.startsWith("/parent/"),
     admin:
       pathname === "/admin" || pathname.startsWith("/admin/"),
   };
@@ -159,14 +157,6 @@ export default function Home() {
                 aria-current={activePage.books ? "page" : undefined}
               >
                 الكتب
-              </a>
-
-              <a
-                href="/parent"
-                className={navClass(activePage.parent)}
-                aria-current={activePage.parent ? "page" : undefined}
-              >
-                ولي الأمر
               </a>
 
               <a
@@ -247,13 +237,6 @@ export default function Home() {
                       className={navClass(activePage.books)}
                     >
                       الكتب والمذكرات
-                    </a>
-
-                    <a
-                      href="/parent"
-                      className={navClass(activePage.parent)}
-                    >
-                      حساب ولي الأمر
                     </a>
 
                     <a
