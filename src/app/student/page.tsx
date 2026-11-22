@@ -113,12 +113,12 @@ export default function StudentDashboard() {
                 <GraduationCap size={23} />
               </Link>
               <div className="min-w-0">
-                <p className="truncate text-xs font-bold text-slate-400">الأحد، 22 نوفمبر 2026</p>
+                <p className="truncate text-xs font-bold text-slate-400">الأحد، 22 نوفمبر 2026</p>\n                <span className="mt-1 inline-flex rounded-full bg-amber-50 px-2 py-0.5 text-[9px] font-black text-amber-700">نسخة تجريبية • بيانات للعرض فقط</span>
                 <h1 className="mt-1 truncate text-lg font-black sm:text-2xl">صباح التفوق يا بطل 👋</h1>
               </div>
             </div>
             <div className="flex shrink-0 items-center gap-2 sm:gap-3">
-              <button aria-label="الإشعارات" className="relative flex h-10 w-10 items-center justify-center rounded-xl border border-slate-100 bg-white text-slate-500">
+              <div aria-label="الإشعارات" className="relative flex h-10 w-10 items-center justify-center rounded-xl border border-slate-100 bg-white text-slate-500">
                 <Bell size={19} />
                 <span className="absolute right-2 top-2 h-2 w-2 rounded-full bg-rose-500 ring-2 ring-white" />
               </button>
