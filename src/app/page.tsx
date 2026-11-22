@@ -79,6 +79,7 @@ export default function Home() {
     home: pathname === "/",
     courses:
       pathname === "/courses" || pathname.startsWith("/courses/"),
+    books: pathname === "/books" || pathname.startsWith("/books/"),
     teacher: pathname === "/teacher",
     contact: pathname === "/contact",
     student:
@@ -153,6 +154,14 @@ export default function Home() {
               </a>
 
               <a
+                href="/books"
+                className={navClass(activePage.books)}
+                aria-current={activePage.books ? "page" : undefined}
+              >
+                الكتب
+              </a>
+
+              <a
                 href={sectionLink("features")}
                 className={navClass(false)}
               >
@@ -223,6 +232,13 @@ export default function Home() {
                       className={navClass(activePage.courses)}
                     >
                       الكورسات
+                    </a>
+
+                    <a
+                      href="/books"
+                      className={navClass(activePage.books)}
+                    >
+                      الكتب والمذكرات
                     </a>
 
                     <a
@@ -730,6 +746,7 @@ export default function Home() {
             <div className="mt-5 grid grid-cols-2 gap-4 text-sm font-semibold text-gray-400">
               <a href="/" className="hover:text-[#204bf0]">الرئيسية</a>
               <a href="/courses" className="hover:text-[#204bf0]">الكورسات</a>
+              <a href="/books" className="hover:text-[#204bf0]">الكتب والمذكرات</a>
               <a href="/#features" className="hover:text-[#204bf0]">مميزات المنصة</a>
               <a href="/teacher" className="hover:text-[#204bf0]">عن المدرس</a>
             </div>
