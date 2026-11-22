@@ -97,17 +97,7 @@ body {
   color: white;
 }
 
-/* Glass Navbar */
-main > header {
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  background: rgba(255,255,255,.88);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  box-shadow: 0 4px 25px rgba(23,48,100,.04);
-  transition: all .3s ease;
-}
+/* Navbar positioning and glass styling are controlled by the component's Tailwind classes. */
 
 /* Hero Background */
 #home {
