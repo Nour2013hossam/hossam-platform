@@ -162,6 +162,14 @@ export default function Home() {
               </a>
 
               <a
+                href="/parent"
+                className={navClass(activePage.parent)}
+                aria-current={activePage.parent ? "page" : undefined}
+              >
+                ولي الأمر
+              </a>
+
+              <a
                 href={sectionLink("features")}
                 className={navClass(false)}
               >
@@ -239,6 +247,13 @@ export default function Home() {
                       className={navClass(activePage.books)}
                     >
                       الكتب والمذكرات
+                    </a>
+
+                    <a
+                      href="/parent"
+                      className={navClass(activePage.parent)}
+                    >
+                      حساب ولي الأمر
                     </a>
 
                     <a
@@ -747,6 +762,7 @@ export default function Home() {
               <a href="/" className="hover:text-[#204bf0]">الرئيسية</a>
               <a href="/courses" className="hover:text-[#204bf0]">الكورسات</a>
               <a href="/books" className="hover:text-[#204bf0]">الكتب والمذكرات</a>
+              <a href="/parent" className="hover:text-[#204bf0]">ولي الأمر</a>
               <a href="/#features" className="hover:text-[#204bf0]">مميزات المنصة</a>
               <a href="/teacher" className="hover:text-[#204bf0]">عن المدرس</a>
             </div>
